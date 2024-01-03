@@ -64,4 +64,9 @@ export class timerSamples {
 
     result.subscribe(observer);
   }
+
+  public sample5() {
+    timer(0, 1000).subscribe((n) => console.log('timer', n));
+    interval(1000).subscribe((n) => console.log('interval', n));
+  }
 }

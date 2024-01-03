@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ExecuteSample } from './utils/execute-sample';
 import { CreationObserables } from './rxjs/creationObservables/index';
+import { subjectSamples } from './rxjs/observable/subject';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent {
   }
 
   Rxjs() {
-    let samples = new CreationObserables.timerSamples();
-    ExecuteSample(samples, 3);
+    let samples = new subjectSamples();
+    ExecuteSample(samples, 4);
   }
 }
