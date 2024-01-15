@@ -1,6 +1,6 @@
-export { fromSamples } from './from';
-export { intervalSamples } from './interval';
-export { ofSamples } from './of';
-export { timerSamples } from './timer';
+export * from './from';
+export * from './interval';
+export * from './of';
+export * from './timer';
 
 export * as CreationObserables from './index';
