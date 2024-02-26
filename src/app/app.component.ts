@@ -5,6 +5,7 @@ import { ExecuteSample } from './utils/execute-sample';
 import { CreationObserables } from './rxjs/creationObservables/index';
 import { subjectSamples } from './rxjs/observable/subject';
 import { CombinationOperator } from './rxjs/combinationOperators/index';
+import { TransformationOperator } from './rxjs/transformationOperators/index';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent {
   }
 
   Rxjs() {
-    let samples = new CombinationOperator.MergeSamples();
-    ExecuteSample(samples);
+    let samples = new TransformationOperator.ConcatMapSamples();
+    ExecuteSample(samples, 4);
   }
 }
