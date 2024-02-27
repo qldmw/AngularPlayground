@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
   Rxjs() {
-    let samples = new TransformationOperator.ConcatMapSamples();
-    ExecuteSample(samples, 4);
+    let samples = new TransformationOperator.SwitchMapSamples();
+    ExecuteSample(samples);
   }
 }

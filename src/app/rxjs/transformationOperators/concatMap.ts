@@ -35,6 +35,7 @@ export class ConcatMapSamples {
     result.subscribe((x) => console.log(x));
   }
 
+  //concatMap vs concatMapTo
   public sample4() {
     const source$ = of(1, 2, 3);
     const inner$ = of('Fixed Observable').pipe(delay(1000));
