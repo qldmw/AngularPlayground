@@ -73,13 +73,18 @@ export class MergeMapSamples {
   public sample4() {
     const first = timer(0).pipe(map((val) => 'a'));
     const second = timer(500).pipe(map((val) => 'b'));
-    const third = timer(99999999999).pipe(map((val) => 'c'));
+    const third = timer(5000).pipe(map((val) => 'c'));
 
     // Combine Observables
     const letters = concat(first, second, third);
 
     const result = letters.pipe(
-      mergeMap((x) => interval(1000).pipe(map((i) => x + i)))
+      concatMap((x) =>
+        interval(1000).pipe(
+          map((i) => x + i),
+          take(10)
+        )
+      )
     );
     //concatMap vs mergeMap，更换之后会阻塞
 
