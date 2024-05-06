@@ -39,3 +39,18 @@ setInterval(() => {
    key function for detection: https://github.com/theajack/disable-devtool/blob/master/src/detector/sub-detector/debugger.ts
 2. https://github.com/kajweb/stop-debugger 81 stars
 3. https://github.com/DungGramer/disable-devtool 19 stars
+
+## 5. Summary
+
+Ranking of Effectiveness of Various Means to Secure Front-End Rendering:  
+Detect keydown/menuContext < Detect if debugger was executed < code compression/minification << code confusion <<< server side render(ultimate solution, Facebook、Twitter、Netflix、Instagram are using it)
+
+```javascript
+//Tampermonkey script, for adding noscript into head to stop JS.
+(function () {
+  "use strict";
+  const noScriptTag = document.createElement("noscript");
+  noScriptTag.textContent = "JavaScript is disabled on this page.";
+  document.head.appendChild(noScriptTag);
+})();
+```
