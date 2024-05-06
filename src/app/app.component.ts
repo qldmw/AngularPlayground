@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ExecuteSample } from './utils/execute-sample';
+import { execute } from './ban-devtools/third-solution';
 import { CreationObserables } from './rxjs/creationObservables/index';
 import { subjectSamples } from './rxjs/observable/subject';
 import { CombinationOperator } from './rxjs/combinationOperators/index';
@@ -19,6 +20,7 @@ export class AppComponent {
 
   constructor() {
     this.Rxjs();
+    execute();
   }
 
   Rxjs() {
