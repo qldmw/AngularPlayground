@@ -50,8 +50,10 @@ Detect keydown/menuContext < Detect if debugger was executed < code compression/
 (function () {
   "use strict";
 
-  // 移除所有 <script> 标签
-  const scripts = document.querySelectorAll("script");
-  scripts.forEach((script) => script.remove());
+  document.addEventListener("DOMContentLoaded", function () {
+    // 移除所有 <script> 标签
+    const scripts = document.querySelectorAll("script");
+    scripts.forEach((script) => script.remove());
+  });
 })();
 ```
