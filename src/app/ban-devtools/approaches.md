@@ -49,8 +49,9 @@ Detect keydown/menuContext < Detect if debugger was executed < code compression/
 //Tampermonkey script, for adding noscript into head to stop JS.
 (function () {
   "use strict";
-  const noScriptTag = document.createElement("noscript");
-  noScriptTag.textContent = "JavaScript is disabled on this page.";
-  document.head.appendChild(noScriptTag);
+
+  // 移除所有 <script> 标签
+  const scripts = document.querySelectorAll("script");
+  scripts.forEach((script) => script.remove());
 })();
 ```
